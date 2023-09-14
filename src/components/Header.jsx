@@ -9,7 +9,6 @@ const Header = (id) => {
   const [clothes, setClothes] = useState([]);
   const [items, setItems] = useState("");
   const [filtered, setFiltered] = useState([]);
-  const [amount, setAmount] = useState();
 
   useEffect(() => {
     const fetchClothes = () => {
