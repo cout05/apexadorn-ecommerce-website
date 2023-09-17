@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="p-5 bg-[#515253] flex justify-between text-white">
+    <footer className="p-5 bg-[#1c1c22] flex justify-between text-white">
       <div>
         <h1 className="text-3xl">Apex Adorn</h1>
       </div>
