@@ -1,18 +1,23 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { fetchPost } from "../services/apiService";
 
 const Products = (passId) => {
   const [clothes, setClothes] = useState([]);
+  const [isClicked, setIsClicked] = useState(false);
+
+  // to fetch the clothes
   useEffect(() => {
-    const fetchClothes = () => {
-      fetch("https://fakestoreapi.com/products/category/men's clothing")
-        .then((res) => res.json())
-        .then((json) => setClothes(json));
+    const fetchClothes = async () => {
+      const items = await fetchPost();
+      setClothes(items);
     };
     fetchClothes();
   }, []);
 
   const handleCart = (id) => {
-    passId.handlePassId(id);
+    setIsClicked(!isClicked);
+    passId.handlePassId(id); // to pass an id of an item to put in cart
+    passId.handleVal(isClicked); // to have a value that change for useeffect
   };
 
   return (
@@ -23,7 +28,7 @@ const Products = (passId) => {
       <div className="grid grid-cols-1 md:grid-cols-4 place-items-center gap-5 pt-10">
         {clothes.map((item) => (
           <div
-            className="border-2 max-w-[300px] xl:w-[300px] rounded h-[350px] px-10 py-5 cursor-pointer bg-white"
+            className="border-2 max-w-[300px] xl:w-[300px] rounded h-[350px] px-5 xl:px-10 py-5 cursor-pointer bg-white"
             key={item.id}>
             <img
               className="max-h-[160px] m-auto mb-3"
