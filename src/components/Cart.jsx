@@ -42,7 +42,7 @@ const Cart = (id) => {
   };
 
   return (
-    <div className="bg-[#1c1c22] text-[#fffff] w-[400px] h-[400px] absolute right-11 top-16 rounded overflow-y-auto">
+    <div className="bg-[#1c1c22] text-[#fffff] w-[400px] h-[400px] absolute right-11 top-16 rounded overflow-y-scroll">
       <div className="fixed flex items-center justify-between py-4 px-2 w-[400px] bg-[#1c1c22] rounded">
         <h2 className="text-sm font-semibold ">SHOPPING BAG</h2>
         <div className="flex items-center gap-5">
@@ -56,7 +56,6 @@ const Cart = (id) => {
           </button>
         </div>
       </div>
-
       <div className="mt-[70px]">
         {filtered.length > 0 ? (
           <div className="flex flex-col gap-1">
