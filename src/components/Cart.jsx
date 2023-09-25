@@ -15,14 +15,14 @@ const Cart = () => {
   const handleCheckout = () => {
     if (total !== 0) {
       setIsClicked(true);
-      delayed;
+      // Use setTimeout to delay setIsClicked(false) for 5 seconds
+      setTimeout(() => {
+        setIsClicked(false);
+      }, 3000);
     }
+    // Clear the cart items
     setCartItem([]);
   };
-
-  const delayed = setTimeout(() => {
-    setIsClicked(false);
-  }, 5000);
 
   useEffect(() => {
     let sum = 0;
