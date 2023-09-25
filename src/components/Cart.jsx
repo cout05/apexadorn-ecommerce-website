@@ -1,96 +1,84 @@
-import { useState, useEffect } from "react";
-import { fetchPost } from "../services/apiService";
+import { useContext, useEffect, useState } from "react";
+import { CartItemContext } from "../context/CartItemContext";
 import { BsTrash3Fill } from "react-icons/bs";
+import { BsCheckCircle } from "react-icons/bs";
 
-const Cart = (id) => {
-  const [clothes, setClothes] = useState([]);
-  const [items, setItems] = useState("");
-  const [filtered, setFiltered] = useState([]);
+const Cart = () => {
+  const { cartItem, setCartItem } = useContext(CartItemContext);
+  const [isClicked, setIsClicked] = useState(false);
+  const [total, setTotal] = useState(0);
 
-  // to fetch the clothes
-  useEffect(() => {
-    const fetchClothes = async () => {
-      const items = await fetchPost();
-      setClothes(items);
-    };
-    fetchClothes();
-  }, []);
-
-  // to get the id
-  useEffect(() => {
-    if (id.handlePassId !== undefined) {
-      setItems(id.handlePassId.passId);
-    }
-  }, [id]);
-
-  // to filter the items that have the same id of the pass id
-  useEffect(() => {
-    const filteredItems = clothes.filter((item) => item.id === items);
-    if (filteredItems !== undefined && filteredItems.length > 0) {
-      setFiltered((prevFiltered) => [...prevFiltered, filteredItems[0]]);
-    }
-  }, [id]);
-
-  // to delete 1 item in cart
-  const handleDeleteAll = () => {
-    setFiltered([]);
-  };
-
-  // to delete all items in cart
   const handleDelete = (index) => {
-    setFiltered(filtered.filter((i, itemdIndex) => itemdIndex != index));
+    setCartItem(cartItem.filter((item, i) => i !== index));
   };
+
+  const handleCheckout = () => {
+    if (total !== 0) {
+      setIsClicked(true);
+      delayed;
+    }
+    setCartItem([]);
+  };
+
+  const delayed = setTimeout(() => {
+    setIsClicked(false);
+  }, 5000);
+
+  useEffect(() => {
+    let sum = 0;
+    cartItem.map((item) => (sum += Math.floor(item.price)));
+    setTotal(sum);
+  }, [cartItem]);
 
   return (
-    <div className="bg-[#1c1c22] text-[#fffff] w-[400px] h-[400px] absolute right-11 top-16 rounded overflow-y-scroll">
-      <div className="fixed flex items-center justify-between py-4 px-2 w-[400px] bg-[#1c1c22] rounded">
-        <h2 className="text-sm font-semibold ">SHOPPING BAG</h2>
-        <div className="flex items-center gap-5">
-          <p className="border-0 bg-[#124559] p-1 text-sm rounded">
-            Items: {filtered.length}
-          </p>
-          <button
-            className="border-0 bg-red-700 p-1 text-sm rounded"
-            onClick={handleDeleteAll}>
-            Remove All
-          </button>
-        </div>
+    <div className="flex flex-col gap-4 mt-4">
+      <div className="flex justify-between">
+        <p>Total: ${total}</p>
+        <p
+          className="bg-[#124559] px-2 py-1 cursor-pointer rounded text-[#eff6e0]"
+          onClick={handleCheckout}>
+          checkout
+        </p>
       </div>
-      <div className="mt-[70px]">
-        {filtered.length > 0 ? (
-          <div className="flex flex-col gap-1">
-            {filtered.map((item, index) => (
-              <div className="flex gap-2 pr-2 justify-between" key={index}>
-                <div className="flex">
-                  <img
-                    className="w-[50px] h-[50px] object-contain"
-                    src={item.image}
-                    alt={item.title}
-                  />
-                  <div>
-                    <p className="text-sm">{item.title}</p>
-                    <p className="text-sm text-green-700">${item.price}</p>
-                  </div>
+      {isClicked ? (
+        <div className="h-[310px] flex justify-center items-center absolute right-2 left-1">
+          <div className="flex bg-[#124559] text-[#eff6e0] p-10 rounded-lg text-center">
+            <div className="mx-4">
+              <BsCheckCircle className="text-[#eff6e0] text-3xl m-auto " />
+            </div>
+            <p>Thank you for buying!</p>
+          </div>
+        </div>
+      ) : null}
+      {cartItem.length > 0 ? (
+        <div>
+          {cartItem.map((item, index) => (
+            <div className="flex justify-between" key={index}>
+              <div className="flex">
+                <div className="w-[40px] h-[50px] mr-4">
+                  <img src={item.image} alt={item.title} />
                 </div>
-
-                <div className="flex items-center gap-3">
-                  <button className="text-sm p-1 bg-[#124559] rounded">
-                    Checkout
-                  </button>
+                <div>
+                  <p className="text-sm max-w-[150px]">{item.title}</p>
+                  <p className="text-green-500">${item.price}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div>
                   <BsTrash3Fill
-                    className="text-red-500 cursor-pointer"
                     onClick={() => handleDelete(index)}
+                    className="text-1xl text-red-800 cursor-pointer"
                   />
                 </div>
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="h-80 flex justify-center items-center">
-            <p className="text-3xl">Empty</p>
-          </div>
-        )}
-      </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="h-[300px] flex justify-center items-center">
+          <p>Cart is Empty</p>
+        </div>
+      )}
     </div>
   );
 };

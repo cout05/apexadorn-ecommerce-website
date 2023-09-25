@@ -1,43 +1,22 @@
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Products from "./components/Products";
+import ProductDetails from "./components/ProductDetails";
 import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 function App() {
-  const [itemId, setItemId] = useState();
-  const [isClicked, setisClicked] = useState(false);
-
-  // to avoid delay
-  useEffect(() => {
-    handleId();
-    handleClickVal();
-  }, [itemId]);
-
-  // to put the passId value to the itemId
-  const handleId = (passId) => {
-    setItemId(passId);
-  };
-
-  // to put the clicked value to the isClicked
-  const handleClickVal = (clicked) => {
-    setisClicked(clicked);
-  };
-
   return (
-    <div className="over  flow-hidden">
+    <div className="over-flow-hidden">
       <BrowserRouter>
-        <Header passId={itemId} passVal={isClicked} />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/products"
-            element={
-              <Products handlePassId={handleId} handleVal={handleClickVal} />
-            }
-          />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
+        <Sidebar />
         <Footer />
       </BrowserRouter>
     </div>

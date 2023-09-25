@@ -16,7 +16,7 @@ const Home = () => {
         Elevated Fashion, Apex Quality
       </h2>
       <div className="text-center mt-16">
-        <Link to="/products" className=" p-4 rounded-lg">
+        <Link to="/products" className="p-4 bg-slate-600 rounded-lg">
           Shop Now
         </Link>
       </div>
