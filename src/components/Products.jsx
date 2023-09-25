@@ -22,7 +22,7 @@ const Products = () => {
       <h1 className="font-bold text-3xl  text-[#eff6e0]">
         ApexAdor Men's Clothing
       </h1>
-      <div className="flex flex-col md:flex-row items-center gap-5 pt-10">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-5 pt-10">
         {clothes.map((item) => (
           <div
             className="border-2 w-[300px] xl:w-[300px] rounded h-[350px] px-5 xl:px-10 py-5 cursor-pointer bg-white"
