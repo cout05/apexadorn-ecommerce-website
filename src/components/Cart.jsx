@@ -25,6 +25,12 @@ const Cart = () => {
   };
 
   useEffect(() => {
+    if (total > 0 && isClicked === true) {
+      setIsClicked(false);
+    }
+  }, [total]);
+
+  useEffect(() => {
     let sum = 0;
     cartItem.map((item) => (sum += Math.floor(item.price)));
     setTotal(sum);
