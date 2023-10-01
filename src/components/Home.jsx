@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <section className="bg-[url('assets/wave-haikei.png')]  h-screen bg-cover bg-center pt-20 text-[#eff6e0]">
-      <div className="max-w-[600px] text-center m-auto">
+    <section className="bg-[url('assets/wave-haikei.png')] flex flex-col justify-center items-center md:block h-screen bg-cover md:bg-center md:pt-32 text-[#eff6e0]">
+      <div className="max-w-[600px] text-center md:m-auto">
         <h1
           className=" text-7xl md:text-8xl
          font-bold font-sans">

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { CartItemContext } from "../context/CartItemContext";
 import { BsTrash3Fill } from "react-icons/bs";
 import { BsCheckCircle } from "react-icons/bs";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 const Cart = () => {
   const { cartItem, setCartItem } = useContext(CartItemContext);
@@ -36,6 +37,11 @@ const Cart = () => {
     setTotal(sum);
   }, [cartItem]);
 
+  const addAmount = (id) => {
+    if (cartItem.id === id) {
+    }
+  };
+
   return (
     <div className="flex flex-col gap-4 mt-4">
       <div className="flex justify-between">
@@ -57,18 +63,33 @@ const Cart = () => {
         </div>
       ) : null}
       {cartItem.length > 0 ? (
-        <div>
+        <div className="flex flex-col gap-3">
           {cartItem.map((item, index) => (
             <div className="flex justify-between" key={index}>
               <div className="flex">
                 <div className="w-[40px] h-[50px] mr-4">
                   <img src={item.image} alt={item.title} />
                 </div>
-                <div>
-                  <p className="text-sm max-w-[150px]">{item.title}</p>
+                <div className="flex flex-col gap-1">
+                  <p className="text-sm uppercase max-w-[240px]">
+                    {item.title}
+                  </p>
                   <p className="text-green-500">${item.price}</p>
+                  <div className="flex gap-1">
+                    <button>
+                      <AiOutlineMinus />
+                    </button>
+                    <input
+                      type="text"
+                      className="w-[20px] h-5 outline-none border rounded text-center"
+                    />
+                    <button>
+                      <AiOutlinePlus />
+                    </button>
+                  </div>
                 </div>
               </div>
+
               <div className="flex items-center gap-4">
                 <div>
                   <BsTrash3Fill

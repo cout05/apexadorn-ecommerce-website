@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="over-flow-hidden">
+    <div className="over-flow-hidden bg-[#01161e]">
       <BrowserRouter>
         <Header />
         <Routes>
