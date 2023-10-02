@@ -14,8 +14,15 @@ const Header = () => {
         <h1 className="text-2xl">ApexAdorn</h1>
       </Link>
 
-      <div onClick={handleClick} className="cursor-pointer">
-        <AiOutlineShoppingCart className="text-2xl" />
+      <div className="flex gap-5">
+        <div onClick={handleClick} className="cursor-pointer">
+          <AiOutlineShoppingCart className="text-2xl" />
+        </div>
+        <div>
+          <Link to="/sign_in">
+            <p className="text-1xl">Sign in</p>
+          </Link>
+        </div>
       </div>
     </div>
   );

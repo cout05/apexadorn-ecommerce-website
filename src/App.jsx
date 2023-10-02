@@ -5,6 +5,7 @@ import ProductDetails from "./components/ProductDetails";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignIn from "./components/SignIn";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/sign_in" element={<SignIn />} />
         </Routes>
         <Sidebar />
         <Footer />
