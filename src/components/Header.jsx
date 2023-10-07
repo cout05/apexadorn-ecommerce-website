@@ -20,7 +20,7 @@ const Header = () => {
         </div>
         <div>
           <Link to="/sign_in">
-            <p className="text-1xl">Sign in</p>
+            <p className="text-1xl">Log in</p>
           </Link>
         </div>
       </div>
