@@ -6,11 +6,17 @@ import { GrFormClose } from "react-icons/gr";
 
 const Cart = () => {
   const { cartItem, setCartItem } = useContext(CartItemContext);
+  const [items, setItems] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
   const [total, setTotal] = useState(0);
 
-  const handleDelete = (index) => {
-    setCartItem(cartItem.filter((item, i) => i !== index));
+  useEffect(() => {
+    const filtered = [...new Set(cartItem)];
+    setItems(filtered);
+  }, [cartItem]);
+
+  const handleDelete = (id) => {
+    setCartItem(cartItem.filter((item) => item.id !== id));
   };
 
   const clearItems = () => {
@@ -70,7 +76,7 @@ const Cart = () => {
       ) : null}
       {cartItem.length > 0 ? (
         <div className="flex flex-col gap-3">
-          {cartItem.map((item, index) => (
+          {items.map((item, index) => (
             <div className="flex justify-between" key={index}>
               <div className="flex">
                 <div className="w-[40px] h-[50px] mr-4">
@@ -80,14 +86,19 @@ const Cart = () => {
                   <p className="text-sm uppercase max-w-[240px]">
                     {item.title}
                   </p>
-                  <p className="text-green-500">${item.price}</p>
+                  <p>x{cartItem.filter((i) => i.id === item.id).length}</p>
+                  <p className="text-green-500">
+                    $
+                    {cartItem.filter((i) => i.id === item.id).length *
+                      item.price}
+                  </p>
                 </div>
               </div>
 
               <div className="flex items-center">
                 <div>
                   <GrFormClose
-                    onClick={() => handleDelete(index)}
+                    onClick={() => handleDelete(item.id)}
                     className="text-2xl cursor-pointer"
                   />
                 </div>

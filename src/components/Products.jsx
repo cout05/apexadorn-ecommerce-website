@@ -25,7 +25,8 @@ const Products = () => {
       <div className="flex flex-wrap items-center justify-center gap-5 pt-10">
         {clothes.map((item) => (
           <div
-            className="border-2 w-[200px] xl:w-[300px] rounded h-[350px] px-1 xl:px-10 py-5 cursor-pointer bg-white"
+            className="border-2 w-[200px] xl:w-[300px] rounded h-[350px] px-1
+             xl:px-10 py-5 cursor-pointer bg-white"
             key={item.id}>
             <img
               className="max-h-[160px] m-auto mb-3"
