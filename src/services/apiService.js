@@ -5,7 +5,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 //get posts request
 export const fetchPost = async () => {
   try {
-    const { data } = await axios.get(`${API_URL}men's clothing`);
+    const { data } = await axios.get(`${API_URL}`);
     return data;
   } catch (err) {
     console.log(err);
