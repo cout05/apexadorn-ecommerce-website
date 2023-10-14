@@ -6,7 +6,7 @@ const SignIn = () => {
       <div
         className="flex flex-col gap-5 justify-center items-center h-[50vh]
        max-w-[600px] rounded-md m-auto p-20 border bg-[rgb(255,255,255,0.1)]
-        backdrop-filter backdrop-blur-lg backdrop-opacity-50">
+        backdrop-filter backdrop-blur-lg backdrop-opacity-50 shadow-2xl">
         <h1 className="text-3xl text-center">Log In</h1>
         <form className="flex flex-col gap-1 w-96">
           <label htmlFor="email">Email: </label>
