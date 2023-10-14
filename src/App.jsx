@@ -9,7 +9,7 @@ import SignIn from "./components/SignIn";
 
 function App() {
   return (
-    <div className="over-flow-hidden bg-[#01161e]">
+    <div className="over-flow-hidden bg-[#D8D5DB]">
       <BrowserRouter>
         <Header />
         <Routes>
