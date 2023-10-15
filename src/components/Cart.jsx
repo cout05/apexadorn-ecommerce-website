@@ -53,7 +53,7 @@ const Cart = () => {
         <p>Total: ${total}</p>
         <div className="flex gap-1">
           <p
-            className="bg-[#124559] shadow-2xl px-2 py-1 cursor-pointer rounded text-[#eff6e0]"
+            className="bg-[#1c1c22] shadow-2xl px-2 py-1 cursor-pointer rounded text-[#eff6e0]"
             onClick={handleCheckout}>
             Checkout
           </p>
@@ -66,7 +66,7 @@ const Cart = () => {
       </div>
       {isClicked ? (
         <div className="h-[310px] flex justify-center items-center absolute right-2 left-1">
-          <div className="flex bg-[#124559] text-[#eff6e0] p-10 rounded-lg text-center">
+          <div className="flex bg-[#1c1c22] text-[#eff6e0] p-10 rounded-lg text-center">
             <div className="mx-4">
               <BsCheckCircle className="text-[#eff6e0] text-3xl m-auto " />
             </div>

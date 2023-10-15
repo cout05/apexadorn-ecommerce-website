@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "./components/SignIn";
+import MobileSideBar from "./components/mobileSideBar";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/sign_in" element={<SignIn />} />
         </Routes>
         <Sidebar />
+        <MobileSideBar />
         <Footer />
       </BrowserRouter>
     </div>
