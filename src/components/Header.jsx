@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { SidebarContext } from "../context/SidebarContext";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { SlMagnifier } from "react-icons/sl";
+import { SearchContext } from "../context/SearchContext";
+import { CgMenuMotion } from "react-icons/cg";
+import { MobileSidebarContext } from "../context/MobileSidebarContext";
 
 const Header = () => {
+  const { isMobileOpen, setIsMobileOpen } = useContext(MobileSidebarContext);
+  const { search, setSearch } = useContext(SearchContext);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
 
   const handleClick = () => {
@@ -20,13 +25,14 @@ const Header = () => {
         <h1 className="text-xl md:text-2xl">ApexAdorn</h1>
       </Link>
 
-      <div className="hidden md:flex gap-2 items-center">
+      <div className="flex gap-2 items-center">
         <input
+          onChange={(e) => setSearch(e.target.value)}
           type="text"
           placeholder="Search an item..."
-          className="rounded outline-none text-[#000000] p-1"
+          className="rounded outline-none text-[#000000] p-1 w-[100px] md:w-[150px]"
         />
-        <SlMagnifier className="text-2xl cursor-pointer" />
+        <SlMagnifier className="text-sm md:text-2xl cursor-pointer" />
       </div>
 
       <div className="hidden md:flex gap-5 items-center">
@@ -38,6 +44,13 @@ const Header = () => {
             <p className="text-1xl">Log in</p>
           </Link>
         </div>
+      </div>
+
+      <div className="md:hidden">
+        <CgMenuMotion
+          onClick={() => setIsMobileOpen(!isMobileOpen)}
+          className="text-2xl cursor-pointer"
+        />
       </div>
     </div>
   );
