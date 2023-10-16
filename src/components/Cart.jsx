@@ -77,7 +77,7 @@ const Cart = () => {
       {cartItem.length > 0 ? (
         <div className="flex flex-col gap-3">
           {items.map((item, index) => (
-            <div className="flex justify-between" key={index}>
+            <div className="flex justify-between border p-1" key={index}>
               <div className="flex">
                 <div className="w-[40px] h-[50px] mr-4">
                   <img src={item.image} alt={item.title} />
