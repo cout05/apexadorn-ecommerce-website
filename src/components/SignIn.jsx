@@ -1,12 +1,14 @@
 import React from "react";
+import { BsPersonCircle } from "react-icons/bs";
 
 const SignIn = () => {
   return (
     <section className=" h-screen pt-28 text-[#2D3142]">
       <div
         className="flex flex-col gap-5 
-       max-w-[600px] rounded-md m-auto p-20 border border-[#1c1c22] bg-[rgb(255,255,255,0.1)]
+       max-w-[600px] rounded-md m-auto p-10 border-2 border-[#1c1c22] bg-[rgb(255,255,255,0.1)]
         backdrop-filter backdrop-blur-lg backdrop-opacity-50 shadow-2xl">
+        <BsPersonCircle className="m-auto text-5xl" />
         <h1 className="text-3xl text-center">Sign In</h1>
         <form className="flex flex-col gap-1 w-96 mx-auto">
           <label htmlFor="email">Email: </label>
