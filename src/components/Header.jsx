@@ -20,7 +20,7 @@ const Header = () => {
     <div
       className="flex justify-between py-3 px-3 md:px-8 fixed
             left-1/2 transform -translate-x-1/2  w-screen xl:w-[1000px]
-             text-[#2D3142] bg-[#fff] md:rounded-[100px] ">
+             text-[#2D3142] bg-[#fff] md:rounded-[100px] z-20 ">
       <Link to="/">
         <h1 className="text-xl md:text-2xl">ApexAdorn</h1>
       </Link>
@@ -30,7 +30,7 @@ const Header = () => {
           onChange={(e) => setSearch(e.target.value)}
           type="text"
           placeholder="Search an item..."
-          className="rounded outline-none text-[#000000] p-1 w-[100px] md:w-[150px]"
+          className="rounded outline-none text-[#000000] p-1 w-[140px] md:w-[150px]"
         />
         <SlMagnifier className="text-sm md:text-2xl cursor-pointer" />
       </div>
@@ -41,7 +41,7 @@ const Header = () => {
         </div>
         <div>
           <Link to="/sign_in">
-            <p className="text-1xl">Log in</p>
+            <p className="text-1xl">Sign in</p>
           </Link>
         </div>
       </div>

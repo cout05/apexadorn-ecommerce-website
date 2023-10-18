@@ -4,6 +4,7 @@ import { IoMdArrowForward } from "react-icons/io";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { SidebarContext } from "../context/SidebarContext";
 import { Link } from "react-router-dom";
+import { BsFillPersonFill } from "react-icons/bs";
 
 const MobileSideBar = () => {
   const { isMobileOpen, handleCloseMobile, setIsMobileOpen } =
@@ -35,9 +36,10 @@ const MobileSideBar = () => {
           className="flex gap-2 cursor-pointer border-b-2">
           <AiOutlineShoppingCart className="text-2xl" /> Cart
         </div>
-        <div className="border-b-2">
+        <div className="border-b-2 flex gap-1 items-center">
+          <BsFillPersonFill className="text-2xl" />
           <Link to="/sign_in">
-            <p className="text-1xl">Log in</p>
+            <p className="text-1xl">Sign in</p>
           </Link>
         </div>
       </div>
