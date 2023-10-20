@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsPersonCircle } from "react-icons/bs";
+import { BsEyeSlashFill } from "react-icons/bs";
+import { BsEyeFill } from "react-icons/bs";
 
 const SignIn = () => {
+  const [showPass, setShowPass] = useState(false);
+
+  const togglePass = () => {
+    setShowPass(!showPass);
+  };
+
   return (
     <section className=" h-screen pt-28 text-[#2D3142]">
       <div
@@ -18,13 +26,30 @@ const SignIn = () => {
             name="email"
             className="p-2 rounded-2xl"
           />
-          <label htmlFor="password">Password: </label>
-          <input
-            type="password"
-            placeholder="Enter password..."
-            name="password"
-            className="p-2 rounded-2xl"
-          />
+          <div className="relative">
+            <div>
+              <label htmlFor="password">Password: </label>
+              <input
+                type={showPass ? "text" : "password"}
+                placeholder="Enter password..."
+                name="password"
+                className="p-2 rounded-2xl block w-full"
+              />
+            </div>
+
+            {showPass ? (
+              <BsEyeSlashFill
+                onClick={togglePass}
+                className="text-2xl absolute bottom-2 right-3 cursor-pointer"
+              />
+            ) : (
+              <BsEyeFill
+                onClick={togglePass}
+                className="text-2xl absolute bottom-2 right-3 cursor-pointer"
+              />
+            )}
+          </div>
+
           <button
             type="submit"
             className="bg-[#1c1c22] text-[#EAE8FF] border mt-5 p-2 rounded-2xl">
