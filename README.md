@@ -7,3 +7,5 @@ I learned a lot in this project, this is my first project using tailwind, I also
 Oct 4 - Now Im planning on putting a login feature, maybe add some products and change some designs, I'll do it after our midterm exam.
 
 Oct 10 - I statrted to change some design especially in my home page.
+
+Oct 20 - updated the UI, might add the signup feature soon. 
