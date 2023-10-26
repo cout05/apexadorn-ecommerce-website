@@ -17,7 +17,7 @@ const SignIn = () => {
        max-w-[600px] rounded-md m-auto p-10 border-2 border-[#1c1c22] shadow-2xl">
         <BsPersonCircle className="m-auto text-5xl" />
         <h1 className="text-3xl text-center">Sign In</h1>
-        <form className="flex flex-col gap-1 mx-auto">
+        <form name="login" className="flex flex-col gap-1 mx-auto">
           <label htmlFor="email">Email: </label>
           <input
             type="email"
