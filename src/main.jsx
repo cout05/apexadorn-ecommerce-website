@@ -7,7 +7,6 @@ import SidebarProvider from "./context/SidebarContext.jsx";
 import CartItemProvider from "./context/CartItemContext.jsx";
 import SearchProvider from "./context/SearchContext.jsx";
 import MobileSidebarProvider from "./context/MobileSidebarContext.jsx";
-import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <MobileSidebarProvider>
@@ -15,9 +14,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <CartItemProvider>
         <SidebarProvider>
           <ProductProvider>
-            <BrowserRouter>
+            <React.StrictMode>
               <App />
-            </BrowserRouter>
+            </React.StrictMode>
           </ProductProvider>
         </SidebarProvider>
       </CartItemProvider>
