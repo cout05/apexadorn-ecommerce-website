@@ -1,56 +1,28 @@
 import { Link } from "react-router-dom";
-import React, { useContext } from "react";
-import { SidebarContext } from "../context/SidebarContext";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { SlMagnifier } from "react-icons/sl";
-import { SearchContext } from "../context/SearchContext";
-import { CgMenuMotion } from "react-icons/cg";
-import { MobileSidebarContext } from "../context/MobileSidebarContext";
 
 const Header = () => {
-  const { isMobileOpen, setIsMobileOpen } = useContext(MobileSidebarContext);
-  const { search, setSearch } = useContext(SearchContext);
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <div
-      className="flex justify-between py-3 px-3 md:px-8 fixed
-            left-1/2 transform -translate-x-1/2  w-screen xl:w-[1000px]
-             text-[#2D3142] bg-[#fff] md:rounded-[100px] z-20 ">
-      <Link to="/">
-        <h1 className="text-xl md:text-2xl">ApexAdorn</h1>
-      </Link>
-
-      <div className="flex gap-2 items-center">
-        <input
-          onChange={(e) => setSearch(e.target.value)}
-          type="text"
-          placeholder="Search an item..."
-          className="rounded outline-none text-[#000000] p-1 w-[140px] md:w-[150px]"
-        />
-        <SlMagnifier className="text-sm md:text-2xl cursor-pointer" />
+    <div className="bg-[#eff6e0] md:fixed md:w-[20%] h-10 md:h-screen border">
+      <div className="bg-[#1c1c22] flex items-center justify-between text-[#eff6e0] px-2  md:p-0 md:ml-4 md:mr-5 md:text-center md:rounded-md md:my-4 h-[50px] md:h-[150px]">
+        <h1 className="text-xl md:text-2xl md:absolute md:bottom-3 w-full ">
+          ApexAdorn
+        </h1>
       </div>
 
-      <div className="hidden md:flex gap-5 items-center">
-        <div onClick={handleClick} className="cursor-pointer">
-          <AiOutlineShoppingCart className="text-2xl" />
-        </div>
-        <div>
-          <Link to="/sign_in">
-            <p className="text-1xl">Sign in</p>
-          </Link>
-        </div>
-      </div>
+      <div className="flex md:flex-col relative h-[70%]">
+        <Link className="p-5" to="/home">
+          Home
+        </Link>
+        <Link to="/about" className="p-5 rounded-lg">
+          About
+        </Link>
+        <Link to="/products" className="p-5 rounded-lg">
+          Products
+        </Link>
 
-      <div className="md:hidden">
-        <CgMenuMotion
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="text-2xl cursor-pointer"
-        />
+        <Link to="/" className="p-5">
+          Logout
+        </Link>
       </div>
     </div>
   );
