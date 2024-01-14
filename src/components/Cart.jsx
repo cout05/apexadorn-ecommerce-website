@@ -26,12 +26,11 @@ const Cart = () => {
   const handleCheckout = () => {
     if (cartItem.length > 0) {
       setIsClicked(true);
-      // Use setTimeout to delay setIsClicked(false) for 5 seconds
       setTimeout(() => {
         setIsClicked(false);
       }, 3000);
     }
-    // Clear the cart items
+
     setCartItem([]);
   };
 

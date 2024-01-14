@@ -2,22 +2,32 @@ import React, { useState } from "react";
 import { BsPersonCircle } from "react-icons/bs";
 import { BsEyeSlashFill } from "react-icons/bs";
 import { BsEyeFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [showPass, setShowPass] = useState(false);
+  const navigate = useNavigate();
 
   const togglePass = () => {
     setShowPass(!showPass);
   };
 
+  const redirect = (event) => {
+    event.preventDefault();
+    navigate("/home");
+  };
+
   return (
-    <section className="h-screen pt-28 text-[#2D3142]">
+    <section className="relative flex items-center justify-center bg-[#D8D5DB] h-screen px-5 md:p-20 text-[#2D3142]">
       <div
         className="flex flex-col gap-5 
-       max-w-[600px] rounded-md m-auto p-10 border-2 border-[#1c1c22] shadow-2xl">
+      w-full md:max-w-[600px] rounded-md m-auto p-10 border-2 border-[#1c1c22] shadow-2xl">
         <BsPersonCircle className="m-auto text-5xl" />
         <h1 className="text-3xl text-center">Sign In</h1>
-        <form name="login" className="flex flex-col gap-1 mx-auto">
+        <form
+          onSubmit={redirect}
+          name="login"
+          className="flex flex-col gap-1 mx-auto">
           <label htmlFor="email">Email: </label>
           <input
             type="email"

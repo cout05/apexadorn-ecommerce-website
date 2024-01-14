@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import SignIn from "./components/SignIn";
-import MobileSideBar from "./components/mobileSideBar";
+import About from "./components/About";
 
 function App() {
   return (
@@ -14,14 +14,13 @@ function App() {
       <HashRouter basename="/">
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<SignIn />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/sign_in" element={<SignIn />} />
         </Routes>
         <Sidebar />
-        <MobileSideBar />
-        <Footer />
       </HashRouter>
     </div>
   );
