@@ -1,15 +1,16 @@
 import { useEffect, useState, useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 import { CartItemContext } from "../context/CartItemContext";
-
 import { SidebarContext } from "../context/SidebarContext";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import AddToCart from "./AddToCart";
 
 const Products = () => {
   const { products } = useContext(ProductContext);
   const { setCartItem, cartItem } = useContext(CartItemContext);
   const [clothes, setClothes] = useState([]);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const [add, setAdd] = useState(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -21,6 +22,7 @@ const Products = () => {
   }, [products]);
 
   const handleCart = (id) => {
+    setAdd(true);
     const filtered = clothes.filter((item) => item.id === id);
     setCartItem((prevState) => [...prevState, filtered[0]]);
   };
@@ -57,6 +59,7 @@ const Products = () => {
             </div>
           </div>
         ))}
+        {add ? <AddToCart /> : null}
       </div>
     </section>
   );
