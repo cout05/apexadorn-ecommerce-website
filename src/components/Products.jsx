@@ -1,30 +1,28 @@
 import { useEffect, useState, useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
-import { CartItemContext } from "../context/CartItemContext";
 import { SidebarContext } from "../context/SidebarContext";
+import { AddToCartContext } from "../context/AddToCartContext";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import AddToCart from "./AddToCart";
 
 const Products = () => {
   const { products } = useContext(ProductContext);
-  const { setCartItem, cartItem } = useContext(CartItemContext);
-  const [clothes, setClothes] = useState([]);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
-  const [add, setAdd] = useState(false);
+  const { addToCart, setAddToCart } = useContext(AddToCartContext);
+  const [clothes, setClothes] = useState([]);
+  const [filteredProduct, setFilteredProduct] = useState([]);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
-  // to fetch the clothes
   useEffect(() => {
     setClothes(products);
   }, [products]);
 
   const handleCart = (id) => {
-    setAdd(true);
-    const filtered = clothes.filter((item) => item.id === id);
-    setCartItem((prevState) => [...prevState, filtered[0]]);
+    setAddToCart(true);
+    setFilteredProduct(() => clothes.filter((item) => item.id === id));
   };
 
   return (
@@ -59,7 +57,7 @@ const Products = () => {
             </div>
           </div>
         ))}
-        {add ? <AddToCart /> : null}
+        {addToCart ? <AddToCart filteredProduct={filteredProduct} /> : null}
       </div>
     </section>
   );
