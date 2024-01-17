@@ -32,6 +32,7 @@ const SignIn = () => {
           <input
             type="email"
             placeholder="Enter email..."
+            id="email"
             name="email"
             className="p-2 rounded-2xl"
           />
@@ -42,6 +43,7 @@ const SignIn = () => {
                 type={showPass ? "text" : "password"}
                 placeholder="Enter password..."
                 name="password"
+                id="password"
                 className="p-2 rounded-2xl block w-full"
               />
             </div>
