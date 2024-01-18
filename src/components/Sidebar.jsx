@@ -12,9 +12,9 @@ const Sidebar = () => {
     <div
       className={`${
         isOpen ? "right-0" : "-right-full"
-      } w-full md:w-[35vw] xl:max-w-[30vw] h-full bg-white fixed
-     top-0 shadow-2xl transition-all duration-300 z-20 px-4 lg:px-[35px] overflow-y-auto`}>
-      <div className="flex items-center justify-between py-6 border-b">
+      } bg-[#eff6e0] w-full md:w-[35vw] xl:max-w-[30vw] h-full fixed
+     top-0 shadow-2xl transition-all duration-300 z-20 overflow-y-auto`}>
+      <div className="bg-[#1c1c22] text-[#eff6e0] px-4 flex items-center justify-between py-6 ">
         <div>Cart ({cartItem.length})</div>
         <div
           onClick={handleClose}
