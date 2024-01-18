@@ -4,11 +4,11 @@ import hero from "../assets/undraw_businessman_e7v0.svg";
 
 const Home = () => {
   return (
-    <section className="bg-[#D8D5DB] flex flex-col md:ml-auto md:w-[75%] justify-center items-center md:block h-screen md:pt-32 text-[#2D3142]">
+    <section className="bg-[#D8D5DB] flex flex-col md:ml-auto md:w-[75%] justify-center items-center md:block h-screen pt-[45px] md:pt-36 text-[#2D3142]">
       <div className="xl:flex items-center justify-center max-w-[600px] text-center md:m-auto">
-        <img src={hero} alt="hero" className="w-[300px] m-auto" />
+        <img src={hero} alt="hero" className="w-[250px] md:w-[300px] m-auto" />
         <div>
-          <h1 className="text-3xl">
+          <h1 className=" text-2xl md:text-3xl">
             Experience the Art of Adornment with Apex Adorn Store
           </h1>
         </div>
