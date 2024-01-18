@@ -47,8 +47,8 @@ const Cart = () => {
   }, [cartItem]);
 
   return (
-    <div className="flex flex-col gap-4 mt-4">
-      <div className="flex justify-between">
+    <div className="bg-[#eff6e0] flex flex-col gap-4 mt-4">
+      <div className="flex justify-between px-4">
         <p>Total: ${total}</p>
         <div className="flex gap-1">
           <p
