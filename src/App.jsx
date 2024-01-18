@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import SignIn from "./components/SignIn";
-import About from "./components/About";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SignIn />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
