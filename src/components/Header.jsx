@@ -1,29 +1,46 @@
 import { Link } from "react-router-dom";
+import { TiHomeOutline } from "react-icons/ti";
+import { MdOutlineShoppingBag } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { MdLogout } from "react-icons/md";
 
 const Header = () => {
   return (
-    <div className="bg-[#eff6e0] fixed w-full md:w-[20%] h-10 md:h-screen ">
+    <div className="bg-[#eff6e0] fixed w-full md:w-[20%] md:h-screen ">
       <div
-        className="bg-[#1c1c22] relative flex items-center justify-between text-[#eff6e0]
-       px-2  md:p-0 md:ml-4 md:mr-5 md:text-center md:rounded-md md:my-4 h-[50px] md:h-[150px]">
-        <h1 className="text-xl md:text-2xl md:absolute md:bottom-3 w-full ">
+        className="bg-[#1c1c22] relative flex items-center text-[#eff6e0]
+       px-2  md:p-0 md:ml-4 md:mr-5 md:text-center md:rounded-md md:my-4 h-14 md:h-[150px]">
+        <h1 className="text-xl md:text-2xl md:absolute md:bottom-3 w-full flex gap-1 md:justify-center items-center">
+          <MdOutlineShoppingBag className="text-2xl" />
           ApexAdorn
         </h1>
       </div>
 
-      <div className="flex justify-end md:justify-normal md:flex-col w-full md:h-[70%]">
-        <Link className="p-2 md:p-5" to="/home">
-          Home
+      <div className="bg-[#eff6e0] rounded  md:bg-transparent flex justify-center m-auto md:justify-normal gap-10 md:gap-0 md:flex-col h-14 md:h-[70%]">
+        <Link
+          className="px-5 md:p-5 flex items-center gap-2 flex-1 md:flex-none"
+          to="/home">
+          <TiHomeOutline className="text-2xl md:text-xl" />
+          <span className="hidden md:block">Home</span>
         </Link>
-        <Link to="/about" className="p-2 md:p-5 rounded-lg">
-          About
+        <Link
+          to="/products"
+          className="px-5 py-6 md:p-5 rounded-lg flex items-center gap-2 flex-1 md:flex-none">
+          <AiOutlineShoppingCart className="text-2xl md:text-xl" />
+          <span className="hidden md:block">Products</span>
         </Link>
-        <Link to="/products" className="p-2 md:p-5 rounded-lg">
-          Products
+        <Link
+          to="/profile"
+          className="px-5 py-6 md:p-5 rounded-lg flex items-center gap-2 flex-1 md:flex-none">
+          <CgProfile className="text-2xl md:text-xl" />
+          <span className="hidden md:block">Profile</span>
         </Link>
-
-        <Link to="/" className="p-2 md:p-5">
-          Logout
+        <Link
+          to="/"
+          className="px-5 py-6 md:p-5 flex items-center gap-2 flex-1 md:flex-none">
+          <MdLogout className="text-2xl md:text-xl" />
+          <span className="hidden md:block">Logout</span>
         </Link>
       </div>
     </div>
