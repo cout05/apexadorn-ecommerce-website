@@ -29,11 +29,11 @@ const Products = () => {
     <section className="text-center pb-4 md:w-[80%] ml-auto">
       <div
         onClick={handleClick}
-        className="flex cursor-pointer justify-end p-5">
-        <AiOutlineShoppingCart className="text-2xl" />
+        className=" text-[#eff6e0] md:text-neutral-950 rounded flex items-center gap-1 cursor-pointer fixed right-3 top-2 md:top-0 p-2 md:mr-0 md:mt-5 shadow-md">
+        <AiOutlineShoppingCart className="text-xl md:text-2xl" />
         Cart
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-5 pt-10">
+      <div className="flex flex-wrap items-center justify-center gap-5 pt-[120px] md:pt-10">
         {clothes.map((item) => (
           <div
             className="border-2 w-[150px] md:w-[300px] rounded h-[300px] md:h-[350px]
