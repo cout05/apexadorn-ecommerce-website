@@ -18,60 +18,52 @@ const SignIn = () => {
   };
 
   return (
-    <section className="relative flex items-center justify-center bg-[#D8D5DB] h-screen px-5 md:p-20 text-[#2D3142]">
-      <div
-        className="flex flex-col gap-5 
-      w-full md:max-w-[600px] rounded-md m-auto p-10 border-2 border-[#1c1c22] shadow-2xl">
-        <BsPersonCircle className="m-auto text-5xl" />
-        <h1 className="text-3xl text-center">Sign In</h1>
-        <form
-          onSubmit={redirect}
-          name="login"
-          className="flex flex-col gap-1 mx-auto">
-          <label htmlFor="email">Email: </label>
-          <input
-            type="email"
-            placeholder="Enter email..."
-            id="email"
-            name="email"
-            className="p-2 rounded-2xl"
-          />
-          <div className="relative">
-            <div>
-              <label htmlFor="password">Password: </label>
-              <input
-                type={showPass ? "text" : "password"}
-                placeholder="Enter password..."
-                name="password"
-                id="password"
-                className="p-2 rounded-2xl block w-full"
-              />
-            </div>
-
-            {showPass ? (
-              <BsEyeSlashFill
-                onClick={togglePass}
-                className="text-2xl absolute bottom-2 right-3 cursor-pointer"
-              />
-            ) : (
-              <BsEyeFill
-                onClick={togglePass}
-                className="text-2xl absolute bottom-2 right-3 cursor-pointer"
-              />
-            )}
+    <div
+      className="bg-[#1c1c22] text-[#EAE8FF]  flex flex-col gap-5 
+      w-full md:max-w-[350px] rounded-md border p-10 md:flex-1">
+      <BsPersonCircle className="m-auto text-5xl" />
+      <h1 className="text-3xl text-center">Sign In</h1>
+      <form onSubmit={redirect} name="login" className="flex flex-col gap-1">
+        <label htmlFor="username">Username: </label>
+        <input
+          type="text"
+          placeholder="Enter username..."
+          id="username"
+          name="username"
+          className="p-2 bg-transparent border-b-2 outline-none"
+        />
+        <div className="relative">
+          <div>
+            <label htmlFor="password">Password: </label>
+            <input
+              type={showPass ? "text" : "password"}
+              placeholder="Enter password..."
+              name="password"
+              id="password"
+              className="p-2 bg-transparent border-b-2 outline-none w-full"
+            />
           </div>
 
-          <button
-            type="submit"
-            className="bg-[#1c1c22] text-[#EAE8FF] border mt-5 p-2 rounded-2xl">
-            Sign in
-          </button>
-        </form>
-        <div>
-          <p>Create an account</p>
+          {showPass ? (
+            <BsEyeSlashFill
+              onClick={togglePass}
+              className="text-2xl absolute bottom-2 right-3 cursor-pointer"
+            />
+          ) : (
+            <BsEyeFill
+              onClick={togglePass}
+              className="text-2xl absolute bottom-2 right-3 cursor-pointer"
+            />
+          )}
         </div>
-      </div>
-    </section>
+
+        <button
+          type="submit"
+          className="bg-[#1c1c22] hover:bg-[#EAE8FF] text-[#EAE8FF] hover:text-[#1c1c22] border mt-5 p-2 rounded-2xl">
+          Sign in
+        </button>
+      </form>
+    </div>
   );
 };
 
