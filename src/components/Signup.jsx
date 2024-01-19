@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [showPass, setShowPass] = useState(false);
-  const navigate = useNavigate();
 
   const togglePass = () => {
     setShowPass(!showPass);
@@ -14,7 +13,7 @@ const Signup = () => {
 
   const redirect = (event) => {
     event.preventDefault();
-    navigate("/home");
+    window.location.reload();
   };
 
   return (
