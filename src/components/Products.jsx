@@ -37,7 +37,7 @@ const Products = () => {
         {clothes.map((item) => (
           <div
             className="border-2 w-[150px] md:w-[300px] rounded h-[300px] md:h-[350px]
-              py-5 cursor-pointer bg-white"
+              py-5 cursor-pointer bg-[#eff6e0]"
             key={item.id}>
             <img
               className="h-[120px] md:h-[160px] m-auto mb-3 object-contain"
