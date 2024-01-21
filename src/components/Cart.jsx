@@ -47,12 +47,14 @@ const Cart = () => {
   }, [cartItem]);
 
   return (
-    <div className="bg-[#eff6e0] flex flex-col gap-4 mt-4">
-      <div className="flex justify-between px-4">
-        <p>Total: ${total}</p>
+    <div className="bg-[#fff] flex flex-col gap-4 mt-4">
+      <div className="bg-[#fff] flex fixed bottom-0 w-[31%] justify-between py-5 px-4">
+        <p>
+          Total: <span className="text-green-700">${total}</span>{" "}
+        </p>
         <div className="flex gap-1">
           <p
-            className="bg-[#1c1c22] shadow-2xl px-2 py-1 cursor-pointer rounded text-[#eff6e0]"
+            className="bg-[#1c1c22] shadow-2xl px-2 py-1 cursor-pointer rounded text-[#fff]"
             onClick={handleCheckout}>
             Checkout
           </p>
@@ -65,9 +67,9 @@ const Cart = () => {
       </div>
       {isClicked ? (
         <div className="h-[310px] flex justify-center items-center absolute right-2 left-1">
-          <div className="flex bg-[#1c1c22] text-[#eff6e0] p-10 rounded-lg text-center">
+          <div className="flex bg-[#1c1c22] text-[#fff] p-10 rounded-lg text-center">
             <div className="mx-4">
-              <BsCheckCircle className="text-[#eff6e0] text-3xl m-auto " />
+              <BsCheckCircle className="text-[#fff] text-3xl m-auto " />
             </div>
             <p>Thank you for buying!</p>
           </div>
@@ -76,7 +78,9 @@ const Cart = () => {
       {cartItem.length > 0 ? (
         <div className="flex flex-col gap-3">
           {items.map((item, index) => (
-            <div className="flex justify-between border p-1" key={index}>
+            <div
+              className="flex bg-[#fff] mx-2 px-4 justify-between border py-2"
+              key={index}>
               <div className="flex">
                 <div className="w-[40px] h-[50px] mr-4">
                   <img src={item.image} alt={item.title} />
