@@ -29,28 +29,28 @@ const Products = () => {
     <section className="text-center pb-4 md:w-[80%] ml-auto">
       <div
         onClick={handleClick}
-        className=" text-[#eff6e0] md:text-neutral-950 rounded flex items-center gap-1 cursor-pointer fixed right-3 top-2 md:top-0 p-2 md:mr-0 md:mt-5 shadow-md">
+        className=" text-[#fff] md:text-neutral-950 rounded flex items-center gap-1 cursor-pointer fixed right-3 top-2 md:top-0 p-2 md:mr-0 md:mt-5 shadow-md">
         <AiOutlineShoppingCart className="text-xl md:text-2xl" />
         Cart
       </div>
       <div className="flex flex-wrap items-center justify-center gap-5 pt-[120px] md:pt-10">
         {clothes.map((item) => (
           <div
-            className="border-2 w-[150px] md:w-[300px] rounded h-[300px] md:h-[350px]
-              py-5 cursor-pointer bg-[#eff6e0]"
+            className="border-2 w-[150px] md:w-[300px] rounded h-[280px] md:h-[350px]
+              py-5 cursor-pointer bg-[#fff]"
             key={item.id}>
             <img
               className="h-[120px] md:h-[160px] m-auto mb-3 object-contain"
               src={item.image}
               alt={item.title}
             />
-            <h2 className="h-[50px] max-w-[200px] text-center md:m-auto text-[10px] xl:text-sm xl:mb-3">
+            <h2 className="h-[50px] max-w-[200px] text-center md:m-auto text-[10px] xl:text-sm">
               {item.title}
             </h2>
-            <p className="text-green-700 mb-2 mt-7 md:mt-7">${item.price}</p>
+            <p className="text-green-700 mt-0 md:mt-7 mb-2">${item.price}</p>
             <div className="flex flex-col gap-2">
               <button
-                className="bg-[#1c1c22] py-1 md:p-2 rounded text-sm md:text-md md:font-bold text-[#eff6e0] md:mx-2"
+                className="bg-[#1c1c22] py-1 md:p-2 rounded text-sm md:text-md md:font-bold text-[#fff] mx-3 md:mx-2"
                 onClick={() => handleCart(item.id)}>
                 Add to cart
               </button>
