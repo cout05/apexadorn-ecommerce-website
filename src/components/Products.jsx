@@ -44,9 +44,9 @@ const Products = () => {
               src={item.image}
               alt={item.title}
             />
-            <h2 className="h-[50px] max-w-[200px] text-center md:m-auto text-[10px] xl:text-sm">
+            <p className="h-[50px] max-w-[200px] text-center md:m-auto text-[10px] xl:text-sm">
               {item.title}
-            </h2>
+            </p>
             <p className="text-green-700 mt-0 md:mt-7 mb-2">${item.price}</p>
             <div className="flex flex-col gap-2">
               <button
