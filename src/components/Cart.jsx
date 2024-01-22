@@ -48,7 +48,7 @@ const Cart = () => {
 
   return (
     <div className="bg-[#fff] flex flex-col gap-4 mt-4">
-      <div className="bg-[#fff] flex fixed bottom-0 w-[31%] justify-between py-5 px-4">
+      <div className="bg-[#fff] flex fixed bottom-0 w-[100%] md:w-[31%] justify-between py-5 px-4">
         <p>
           Total: <span className="text-green-700">${total}</span>{" "}
         </p>
@@ -66,16 +66,20 @@ const Cart = () => {
         </div>
       </div>
       {isClicked ? (
-        <div className="h-[310px] flex justify-center items-center absolute right-2 left-1">
-          <div className="flex bg-[#1c1c22] text-[#fff] p-10 rounded-lg text-center">
-            <div className="mx-4">
-              <BsCheckCircle className="text-[#fff] text-3xl m-auto " />
-            </div>
-            <p>Thank you for buying!</p>
+        <div>
+          <div
+            className="bg-[#393946] border border-[#1c1c22] text-[#fff]  px-4 mx-4 py-3 rounded relative"
+            role="alert">
+            <strong className="font-bold">Success! </strong>
+            <span className="block sm:inline">
+              Items succesfully checked out.
+            </span>
+            <span className="absolute top-0 bottom-0 right-0 text-2xl px-4 py-6 md:py-3  cursor-pointer">
+              <GrFormClose onClick={() => setIsClicked(false)} />
+            </span>
           </div>
         </div>
-      ) : null}
-      {cartItem.length > 0 ? (
+      ) : cartItem.length > 0 ? (
         <div className="flex flex-col gap-3">
           {items.map((item, index) => (
             <div
@@ -86,7 +90,7 @@ const Cart = () => {
                   <img src={item.image} alt={item.title} />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <p className="text-sm uppercase max-w-[240px]">
+                  <p className="text-[0.7rem] uppercase max-w-[240px]">
                     {item.title}
                   </p>
                   <p>x{cartItem.filter((i) => i.id === item.id).length}</p>
