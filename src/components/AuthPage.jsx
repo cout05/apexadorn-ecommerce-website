@@ -7,7 +7,7 @@ const AuthPage = () => {
   const [isClick, setIsClick] = useState(false);
 
   return (
-    <section className="relative flex flex-col md:flex-row items-center justify-center bg-[#D8D5DB] h-screen px-5 md:p-20 text-[#2D3142]">
+    <section className="relative bg-[#D8D5DB] flex flex-col md:flex-row items-center justify-center h-screen px-5 md:p-20 text-[#2D3142]">
       <div className="px-10 py-4 md:py-0 w-full md:max-w-[350px] -order-first md:-order-last">
         <h1 className="text-2xl bold text-center hidden md:block mb-10">
           Welcome to Apex Adorn
