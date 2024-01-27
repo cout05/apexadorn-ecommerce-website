@@ -29,31 +29,31 @@ const Products = () => {
     <section className="text-center pb-4 md:w-[80%] ml-auto">
       <div
         onClick={handleClick}
-        className=" text-[#fff] md:text-neutral-950 rounded flex items-center gap-1 cursor-pointer fixed right-3 top-2 md:top-0 p-2 md:mr-0 md:mt-5 shadow-md">
+        className=" text-[#fff] font-semibold bg-[rgb(28,28,34,0.8)] backdrop-blur-10 rounded-tl-[0%] rounded-tr-[0%] rounded-br-[50%] rounded-bl-[50%] flex items-center gap-1 cursor-pointer fixed right-3 top-2 md:top-[-20px] p-2 md:mr-0 md:mt-5 shadow-md">
         <AiOutlineShoppingCart className="text-xl md:text-2xl" />
         Cart
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-5 pt-[120px] md:pt-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 justify-items-center mx-2 md:mx-10 pt-[150px] md:pt-10">
         {clothes.map((item) => (
           <div
-            className="border-2 w-[150px] md:w-[300px] rounded h-[280px] md:h-[350px]
-              py-5 cursor-pointer bg-[#fff]"
+            onClick={() => handleCart(item.id)}
+            className="flex-2 w-[170px] md:w-[320px] cursor-pointer mb-10"
             key={item.id}>
-            <img
-              className="h-[120px] md:h-[160px] m-auto mb-3 object-contain"
-              src={item.image}
-              alt={item.title}
-            />
-            <p className="h-[50px] max-w-[200px] text-center md:m-auto text-[10px] xl:text-sm">
-              {item.title}
-            </p>
-            <p className="text-green-700 mt-0 md:mt-7 mb-2">${item.price}</p>
-            <div className="flex flex-col gap-2">
-              <button
-                className="bg-[#1c1c22] py-1 md:p-2 rounded text-sm md:text-md md:font-bold text-[#fff] mx-3 md:mx-2"
-                onClick={() => handleCart(item.id)}>
-                Add to cart
-              </button>
+            <div className="bg-[#fff] h-[250px] md:h-[300px] mb-2 w-full py-10 md:p-10">
+              <img
+                className="h-[160px] mx-auto object-contain"
+                src={item.image}
+                alt={item.title}
+              />
+            </div>
+            <div className="w-full text-left">
+              <p className="font-semibold text-md">{item.title}</p>
+              <p className="capitalize text-[#1c1c22bd] mb-2 font-semibold">
+                {item.category}
+              </p>
+              <p className="text-green-700">
+                $<span className="font-semibold">{item.price}</span>
+              </p>
             </div>
           </div>
         ))}
