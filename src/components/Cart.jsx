@@ -54,7 +54,7 @@ const Cart = () => {
         </p>
         <div className="flex gap-1">
           <p
-            className="bg-[#1c1c22] shadow-2xl px-2 py-1 cursor-pointer rounded text-[#fff]"
+            className="bg-[#2D3142] shadow-2xl px-2 py-1 cursor-pointer rounded text-[#fff]"
             onClick={handleCheckout}>
             Checkout
           </p>
@@ -68,7 +68,7 @@ const Cart = () => {
       {isClicked ? (
         <div>
           <div
-            className="bg-[#393946] border border-[#1c1c22] text-[#fff]  px-4 mx-4 py-3 rounded relative"
+            className="bg-[#393946] border border-[#2D3142] text-[#fff]  px-4 mx-4 py-3 rounded relative"
             role="alert">
             <strong className="font-bold">Success! </strong>
             <span className="block sm:inline">

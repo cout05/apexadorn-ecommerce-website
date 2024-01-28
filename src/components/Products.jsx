@@ -29,7 +29,7 @@ const Products = () => {
     <section className="text-center pb-4 md:w-[80%] ml-auto">
       <div
         onClick={handleClick}
-        className=" text-[#fff] font-semibold bg-[rgb(28,28,34,0.8)] backdrop-blur-10 rounded-tl-[0%] rounded-tr-[0%] rounded-br-[50%] rounded-bl-[50%] flex items-center gap-1 cursor-pointer fixed right-3 top-2 md:top-[-20px] p-2 md:mr-0 md:mt-5 shadow-md">
+        className=" text-[#fff] font-semibold md:bg-[rgb(28,28,34,0.8)] backdrop-blur-10 rounded-tl-[0%] rounded-tr-[0%] rounded-br-[50%] rounded-bl-[50%] flex items-center gap-1 cursor-pointer fixed right-3 top-2 md:top-[-20px] p-2 md:mr-0 md:mt-5 md:shadow-md">
         <AiOutlineShoppingCart className="text-xl md:text-2xl" />
         Cart
       </div>
@@ -48,7 +48,7 @@ const Products = () => {
             </div>
             <div className="w-full text-left">
               <p className="font-semibold text-md">{item.title}</p>
-              <p className="capitalize text-[#1c1c22bd] mb-2 font-semibold">
+              <p className="capitalize text-[#2D3142bd] mb-2 font-semibold">
                 {item.category}
               </p>
               <p className="text-green-700">

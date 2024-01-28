@@ -19,7 +19,7 @@ const SignIn = () => {
 
   return (
     <div
-      className="bg-[#1c1c22] text-[#EAE8FF]  flex flex-col gap-5 
+      className="bg-[#2D3142] text-[#EAE8FF]  flex flex-col gap-5 
       w-full md:max-w-[350px] rounded-md border p-10 md:flex-1">
       <BsPersonCircle className="m-auto text-5xl" />
       <h1 className="text-3xl text-center">Sign In</h1>
@@ -59,7 +59,7 @@ const SignIn = () => {
 
         <button
           type="submit"
-          className="bg-[#1c1c22] hover:bg-[#EAE8FF] text-[#EAE8FF] hover:text-[#1c1c22] border mt-5 p-2 rounded-2xl">
+          className="bg-[#2D3142] hover:bg-[#EAE8FF] text-[#EAE8FF] hover:text-[#2D3142] border mt-5 p-2 rounded-2xl">
           Sign in
         </button>
       </form>

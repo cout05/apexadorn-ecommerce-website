@@ -24,7 +24,7 @@ const AddToCart = (filteredProduct) => {
         className="fixed inset-0 w-full h-full bg-black/50 cursor-pointer"></div>
 
       <div className="relative w-full cursor-pointer pointer-events-none transition my-auto p-4">
-        <div className="bg-[#fff] text-[#1c1c22] w-full py-2 cursor-default pointer-events-auto relative rounded-xl mx-auto max-w-sm">
+        <div className="bg-[#fff] text-[#2D3142] w-full py-2 cursor-default pointer-events-auto relative rounded-xl mx-auto max-w-sm">
           <div className="space-y-2 p-2">
             <div className="p-4 space-y-2 text-center">
               <h2 className="text-xl font-bold tracking-tight">
@@ -85,7 +85,7 @@ const AddToCart = (filteredProduct) => {
                   type="submit"
                   onClick={add}
                   className="inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border outline-none min-h-[2.25rem] px-4 text-sm  shadow 
-                    bg-[#1c1c22] text-[#fff]">
+                    bg-[#2D3142] text-[#fff]">
                   <span className="flex items-center gap-1">
                     <span className="">Add-To-Cart</span>
                   </span>
