@@ -1,11 +1,16 @@
-project_info:
-  name: Apex Adorn
-  description: |
-    Apex Adorn is a sophisticated e-commerce platform meticulously designed with React.js and styled using Tailwind CSS. It seamlessly integrates with the FakeStore API to offer users a curated selection of high-quality products across various categories. With its intuitive user interface, responsive design, and diverse product range, Apex Adorn delivers a delightful shopping experience for both customers and store owners alike.
+<h1>Apex Adorn 🛍️</h1><br/> 
+Welcome to Apex Adorn, where you can experience the art of adornment through our curated collection of clothing and accessories.<br/>
 
-key_features:
-  - Modern Design: Crafted with attention to detail, Apex Adorn boasts an elegant and modern design that captivates users from the moment they land on the site.
-  - Seamless Integration: Leveraging the power of React.js and Tailwind CSS, Apex Adorn seamlessly integrates with the FakeStore API, ensuring a smooth browsing and purchasing experience.
-  - Curated Product Selection: Our platform offers a carefully curated selection of products from a wide range of categories, ensuring that users find exactly what they're looking for.
-  - Responsive and User-Friendly: Apex Adorn is designed to be fully responsive across all devices, providing users with a consistent and enjoyable shopping experience, whether they're on a desktop, tablet, or smartphone.
-  - Optimized for Performance: With a focus on performance optimization, Apex Adorn delivers lightning-fast load times and smooth navigation, ensuring that users can browse and purchase products with ease.
+<strong>Introduction</strong> <br/>
+Apex Adorn is a clothing shop website designed to provide users with a seamless browsing and shopping experience. Our platform offers a diverse range of high-quality products, allowing customers to explore and adorn themselves with style and sophistication.<br/>
+
+<strong>Features</strong><br/>
+  User-Friendly Interface: Navigate through our website effortlessly with our intuitive user interface.<br/>
+  Wide Selection: Discover a diverse range of clothing and accessories to suit every style and occasion.<br/>
+  Responsive Design: Enjoy a seamless browsing experience across devices, whether you're on desktop, tablet, or mobile.<br/>
+  Tailwind Styling: We leverage the power of Tailwind CSS to ensure a visually stunning and consistent design throughout the website.<br/>
+  FakeStore API Integration: Our product listings are dynamically fetched from the FakeStore API, ensuring up-to-date and realistic product information.<br/>
+<strong>Technologies Used</strong><br/>
+  React: We utilize React to build a fast, interactive, and dynamic user interface for our website.<br/>
+  Tailwind CSS: Tailwind CSS is used for styling, enabling us to create beautiful and responsive designs efficiently.<br/>
+  FakeStore API: We integrate the FakeStore API to fetch and display product information dynamically.<br/>
