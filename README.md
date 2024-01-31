@@ -1,4 +1,4 @@
-# Apex Adorn - Experience the Art of Adornment🛍<br/>
+# Apex Adorn - Experience the Art of Adornment ✨<br/>
 
 Welcome to Apex Adorn, where you can elevate your style and embrace the essence of fashion.
 
