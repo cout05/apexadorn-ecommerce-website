@@ -4,7 +4,7 @@ Welcome to Apex Adorn, where you can elevate your style and embrace the essence 
 
 ## About Apex Adorn
 
-Apex Adorn is a clothing shop website designed to provide users with a seamless browsing and shopping experience. Our platform offers a diverse range of high-quality products, allowing customers to explore and adorn themselves with style and sophistication
+Apex Adorn is a clothing shop website designed to provide users with a seamless browsing and shopping experience. Our platform offers a diverse range of high-quality products, allowing customers to explore and adorn themselves with style and sophistication.
 
 
 ## Technologies Used
