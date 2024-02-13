@@ -12,4 +12,4 @@ Apex Adorn is a clothing shop website designed to provide users with a seamless 
 -  **Tailwind CSS**: Tailwind CSS is used for styling, enabling us to create beautiful and responsive designs efficiently.<br/>
 -  **FakeStore API**: We integrate the FakeStore API to fetch and display product information dynamically.<br/>
 
-                                                                [Link](https://apexadorn.netlify.app/)
+[Link](https://apexadorn.netlify.app/)
